@@ -60,14 +60,12 @@ const Navbar = () => {
         <div>{isAuthenticated ? <LogoutButton /> : <LoginButton />}</div>
         {isAuthenticated && (
           <div>
-            <Link to={'/profile'}>
-              <div className="user-profile">
-                <div className="user-circle">
-                  <FaUserCircle />
-                </div>
-                <div>{user?.name}</div>
+            <div className="user-profile">
+              <div className="user-circle">
+                <FaUserCircle />
               </div>
-            </Link>
+              <div>{user?.name}</div>
+            </div>
           </div>
         )}
       </div>
