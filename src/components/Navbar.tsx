@@ -57,7 +57,7 @@ const Navbar = () => {
           </div>
         )}
 
-        <div>{isAuthenticated ? <LogoutButton /> : <LoginButton />}</div>
+        <div className='login-logout-container'>{isAuthenticated ? <LogoutButton /> : <LoginButton />}</div>
         {isAuthenticated && (
           <div>
             <div className="user-profile">

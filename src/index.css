@@ -63,6 +63,14 @@ header .user-circle {
   align-self: flex-end;
 }
 
+header .login-logout-container {
+  cursor: pointer;
+}
+
+Link {
+  text-decoration: none;
+}
+
 .pages {
   max-width: 1000px;
   padding: 20px;
