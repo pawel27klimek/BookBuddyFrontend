@@ -3,8 +3,8 @@ import { BsSuitHeart } from 'react-icons/bs';
 import { BsSuitHeartFill } from 'react-icons/bs';
 import { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { BookCardStyle } from '../styles/BookCardStyle';
 
 const BookCard = ({
   book,
@@ -68,27 +68,10 @@ const BookCard = ({
   };
 
   return (
-    <div className="book-card">
-      <Link to={'/' + book._id}>
-        <div>
-          <h4>Title: {book.title}</h4>
-          <h5>
-            <strong>Category: </strong>
-            {book.category}
-          </h5>
-          <h6>
-            <strong>Year of publication: </strong>
-            {book.yearOfPublication}
-          </h6>
-          <img src={book.imgUrl} />
-          <p>Description: {book.description}</p>
-          <p>
-            Created:{' '}
-            {formatDistanceToNow(new Date(book.createdAt), {
-              addSuffix: true,
-            })}
-          </p>
-        </div>
+    <BookCardStyle>
+      <Link style={{ textDecoration: 'none' }} to={'/' + book._id}>
+        <img src={book.imgUrl} />
+        <h4>{book.title}</h4>
       </Link>
       <div>
         {showLikeButton && (
@@ -97,15 +80,17 @@ const BookCard = ({
               handleLikeClick();
             }}
           >
-            {isLiked ? (
-              <BsSuitHeartFill color="red" />
-            ) : (
-              <BsSuitHeart color="red" />
-            )}
+            <div className="heart">
+              {isLiked ? (
+                <BsSuitHeartFill color="red" />
+              ) : (
+                <BsSuitHeart color="red" />
+              )}
+            </div>
           </div>
         )}
       </div>
-    </div>
+    </BookCardStyle>
   );
 };
 

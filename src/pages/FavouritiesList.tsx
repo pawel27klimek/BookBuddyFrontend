@@ -1,4 +1,4 @@
-import BookCard from './BookCard';
+import BookCard from '../components/BookCard';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useEffect, useState } from 'react';
 import { book } from '../types';

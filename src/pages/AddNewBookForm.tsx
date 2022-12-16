@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useNavigate } from 'react-router-dom';
+import TextField from '@mui/material/TextField';
 
 type newBook = {
   title: string;
@@ -33,7 +34,6 @@ const AddNewBookForm = () => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNewBook((prev) => ({
-      ...newBook,
       ...prev,
       [event.target.name]: event.target.value,
     }));
@@ -72,17 +72,30 @@ const AddNewBookForm = () => {
     <div className="page-container">
       <form onSubmit={(event) => handleSubmit(event)}>
         <h3>Add a new book</h3>
-        <label>
-          Title:
-          <input
+        {/* <label> */}
+        {/* Title: */}
+        <TextField
+          inputProps={{ maxLength: 30 }}
+          className="title"
+          label="Title"
+          variant="outlined"
+          type="text"
+          name="title"
+          value={newBook.title}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            handleChange(event);
+          }}
+          autoComplete="off"
+        />
+        {/* <input
             type="text"
             name="title"
             value={newBook.title}
             onChange={(event) => {
               handleChange(event);
             }}
-          />
-        </label>
+          /> */}
+        {/* </label> */}
         <label>
           Author:
           <input

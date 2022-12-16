@@ -4,8 +4,9 @@ import Navbar from './components/Navbar';
 import { Auth0Provider } from '@auth0/auth0-react';
 import BookDetails from './pages/BookDetails';
 import AddNewBookForm from './pages/AddNewBookForm';
-import FavouritiesList from './components/FavouritiesList';
+import FavouritiesList from './pages/FavouritiesList';
 import AddUser from './components/AddUser';
+import { Pages } from './styles/Pages';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       >
         <BrowserRouter>
           <Navbar />
-          <div className="pages">
+          <Pages>
             <Routes>
               <Route path="/" element={<BookList />} />
               <Route path="/:id" element={<BookDetails />} />
@@ -25,7 +26,7 @@ function App() {
               <Route path="/favourities" element={<FavouritiesList />} />
               <Route path="/adduser" element={<AddUser />} />
             </Routes>
-          </div>
+          </Pages>
         </BrowserRouter>
       </Auth0Provider>
     </div>

@@ -1,8 +1,8 @@
-/* google font */
+/* google font
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
 /* layout */
-:root {
+/* :root {
   --primary: #678ed1;
 }
 body {
@@ -69,13 +69,12 @@ header .login-logout-container {
 
 Link {
   text-decoration: none;
-}
-
-.pages {
+} */
+/* .pages {
   max-width: 1000px;
   padding: 20px;
   margin: 0 auto;
-}
+} */
 
 /* homepage */
 /* .home {
@@ -86,7 +85,7 @@ Link {
   grid-template-columns: 3fr 1fr;
   gap: 100px;} */
 
-.book-card {
+/* .book-card {
   background: #fff;
   border-radius: 4px;
   margin: 20px auto;
@@ -117,10 +116,11 @@ Link {
   padding: 6px;
   border-radius: 50%;
   color: #333;
-}
+} */
 
-/* new book form */
-label,
+/* new book form
+
+ label,
 input {
   display: block;
 }
@@ -142,11 +142,4 @@ form button {
   border-radius: 4px;
   cursor: pointer;
 }
-div.error {
-  padding: 10px;
-  background: #ffefef;
-  border: 1px solid var(--error);
-  color: var(--error);
-  border-radius: 4px;
-  margin: 20px 0;
-}
+*/
