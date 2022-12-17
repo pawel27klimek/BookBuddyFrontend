@@ -3,7 +3,6 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { useEffect, useState } from 'react';
 import { book } from '../types';
 import { BookListStyle } from '../styles/BookListStyle';
-import { BookCardStyle } from '../styles/BookCardStyle';
 import { BookCardContainer } from '../styles/BookCardContainer';
 
 const FavouritiesList = () => {
