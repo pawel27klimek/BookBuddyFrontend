@@ -10,10 +10,10 @@ type newBook = {
   publisher: string;
   category: string;
   language: string;
-  yearOfPublication: number | null;
+  yearOfPublication: number | string;
   imgUrl: string;
   description: string;
-  nrOfPages: number | null;
+  nrOfPages: number | string;
   author: string;
   creatorUserEmail: string | undefined;
 };
@@ -22,14 +22,14 @@ const AddNewBookForm = () => {
   const { user } = useAuth0();
   const [newBook, setNewBook] = useState<newBook>({
     title: '',
+    author: '',
     publisher: '',
     category: '',
     language: '',
-    yearOfPublication: null,
+    yearOfPublication: '',
     imgUrl: '',
     description: '',
-    nrOfPages: null,
-    author: '',
+    nrOfPages: '',
     creatorUserEmail: user?.email,
   });
   const navigate = useNavigate();
@@ -72,8 +72,6 @@ const AddNewBookForm = () => {
 
   return (
     <NewBookForm onSubmit={(event) => handleSubmit(event)}>
-      {/* <form onSubmit={(event) => handleSubmit(event)}> */}
-      {/* <h3>ADD NEW BOOK</h3> */}
       <InputBox>
         <TextField
           inputProps={{ maxLength: 50 }}
@@ -89,6 +87,7 @@ const AddNewBookForm = () => {
           autoComplete="off"
         />
       </InputBox>
+
       <InputBox>
         <TextField
           inputProps={{ maxLength: 30 }}
@@ -213,10 +212,9 @@ const AddNewBookForm = () => {
         />
       </InputBox>
 
-      <Button variant="outlined" sx={{ marginTop: '20px' }}>
+      <Button variant="outlined" type="submit" sx={{ marginTop: '20px' }}>
         Add new book
       </Button>
-      {/* </form> */}
     </NewBookForm>
   );
 };

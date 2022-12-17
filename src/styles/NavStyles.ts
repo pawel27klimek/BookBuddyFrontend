@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const NavContainer = styled.header`
-  max-width: 1400px;
   margin: 20px 100px;
   padding: 10px 20px;
   display: flex;

@@ -1,12 +1,18 @@
 import { useEffect, useState } from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { book } from '../types';
 import { FaTrashAlt } from 'react-icons/fa';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useNavigate } from 'react-router-dom';
 import { BsSuitHeart } from 'react-icons/bs';
 import { BsSuitHeartFill } from 'react-icons/bs';
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+import {
+  BookDataContainer,
+  ButtonsContainer,
+  DescriptionContainer,
+  ImgContainer,
+  PageContainer,
+} from '../styles/BookDetailsStyle';
 
 const BookDetails = () => {
   const params = useParams<string>();
@@ -77,42 +83,60 @@ const BookDetails = () => {
   };
 
   return (
-    <div className="page-container">
-      <div key={book?._id}>
-        <div>Title:{book?.title}</div>
-        <div>Category:{book?.category}</div>
-        <div>Description:{book?.description}</div>
-        <div>Language:{book?.language}</div>
-        <div>Number of pages:{book?.nrOfPages}</div>
-        <div>Image:{book?.imgUrl}</div>
-        <div>Publisher:{book?.publisher}</div>
-        <div>Year of publication:{book?.yearOfPublication}</div>
-        <div>User creator: {book?.creatorUserEmail}</div>
-        {showDeleteButton && (
-          <div>
-            <FaTrashAlt
-              onClick={() => {
-                handleTrashClick();
-              }}
-            />
-          </div>
-        )}
+    <PageContainer>
+      <ImgContainer>
+        <img src={book?.imgUrl} alt="book-image" />
+      </ImgContainer>
+      <BookDataContainer>
+        <h1>{book?.title}</h1>
+        <h2>Author: {book?.author}</h2>
+        <h3>Category: {book?.category}</h3>
+        <h3>Language: {book?.language}</h3>
+        <h4>Publisher: {book?.publisher}</h4>
+        <h4>Year of publication: {book?.yearOfPublication}</h4>
+        <h5>Number of pages: {book?.nrOfPages}</h5>
+        <h5>User creator: {book?.creatorUserEmail}</h5>
+        <ButtonsContainer>
+          {showDeleteButton && (
+            <div>
+              <FaTrashAlt
+                onClick={() => {
+                  handleTrashClick();
+                }}
+              />
+            </div>
+          )}
 
-        {showLikeButton && (
-          <div
-            onClick={() => {
-              handleLikeClick();
-            }}
-          >
-            {isLiked ? (
-              <BsSuitHeartFill color="red" />
-            ) : (
-              <BsSuitHeart color="red" />
-            )}
-          </div>
-        )}
-      </div>
-    </div>
+          {showLikeButton && (
+            <div
+              onClick={() => {
+                handleLikeClick();
+              }}
+            >
+              {isLiked ? (
+                <BsSuitHeartFill
+                  color="red"
+                  onClick={() => {
+                    handleLikeClick();
+                  }}
+                />
+              ) : (
+                <BsSuitHeart
+                  color="red"
+                  onClick={() => {
+                    handleLikeClick();
+                  }}
+                />
+              )}
+            </div>
+          )}
+        </ButtonsContainer>
+        <div>
+          Description:{' '}
+          <DescriptionContainer>{book?.description}</DescriptionContainer>
+        </div>
+      </BookDataContainer>
+    </PageContainer>
   );
 };
 

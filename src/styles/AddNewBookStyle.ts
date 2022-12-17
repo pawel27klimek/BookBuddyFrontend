@@ -7,5 +7,8 @@ export const NewBookForm = styled.form`
   justify-content: center;
 `;
 export const InputBox = styled.div`
-  margin-top: 15px;
+  margin-top: 20px;
+  input {
+    width: 500px;
+  }
 `;

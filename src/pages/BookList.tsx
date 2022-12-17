@@ -24,7 +24,6 @@ const BookList = () => {
         <>Loading...</>
       ) : (
         <>
-          {/* <h2>All of the books</h2> */}
           <BookListStyle>
             {books &&
               books.map((book: book) => (

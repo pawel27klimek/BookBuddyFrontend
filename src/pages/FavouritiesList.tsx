@@ -2,6 +2,9 @@ import BookCard from '../components/BookCard';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useEffect, useState } from 'react';
 import { book } from '../types';
+import { BookListStyle } from '../styles/BookListStyle';
+import { BookCardStyle } from '../styles/BookCardStyle';
+import { BookCardContainer } from '../styles/BookCardContainer';
 
 const FavouritiesList = () => {
   const { user } = useAuth0();
@@ -36,16 +39,13 @@ const FavouritiesList = () => {
   };
 
   return (
-    <div>
-      {/* <div> FavouritiesList</div> */}
-      <div>
-        {favouritiesBooks.map((book: book) => (
-          <div key={book._id}>
-            <BookCard book={book} updateFavourities={updateFavouritiesBooks} />
-          </div>
-        ))}
-      </div>
-    </div>
+    <BookListStyle>
+      {favouritiesBooks.map((book: book) => (
+        <BookCardContainer key={book._id}>
+          <BookCard book={book} updateFavourities={updateFavouritiesBooks} />
+        </BookCardContainer>
+      ))}
+    </BookListStyle>
   );
 };
 
