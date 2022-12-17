@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const PageContainer = styled.div`
   display: flex;
   padding: 60px 120px;
+  margin-left: 100px;
 `;
 
 export const ImgContainer = styled.div`
@@ -24,8 +25,11 @@ export const ButtonsContainer = styled.div`
   div {
     padding: 10px;
   }
-  svg path: {
-    width: 15px;
-    height: 15px;
+  .heart {
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
+  .trash {
+    font-size: 2rem;
   }
 `;

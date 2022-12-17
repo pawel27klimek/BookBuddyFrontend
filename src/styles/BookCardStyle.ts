@@ -33,6 +33,6 @@ export const BookCardStyle = styled.div`
   }
   .heart {
     margin: 5px;
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 `;

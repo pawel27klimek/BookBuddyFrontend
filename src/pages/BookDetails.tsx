@@ -98,7 +98,7 @@ const BookDetails = () => {
         <h5>User creator: {book?.creatorUserEmail}</h5>
         <ButtonsContainer>
           {showDeleteButton && (
-            <div>
+            <div className="trash">
               <FaTrashAlt
                 onClick={() => {
                   handleTrashClick();
@@ -109,6 +109,7 @@ const BookDetails = () => {
 
           {showLikeButton && (
             <div
+              className="heart"
               onClick={() => {
                 handleLikeClick();
               }}

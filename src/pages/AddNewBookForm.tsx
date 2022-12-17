@@ -181,7 +181,6 @@ const AddNewBookForm = () => {
       </InputBox>
       <InputBox>
         <TextField
-          inputProps={{ maxLength: 100 }}
           className="description"
           label="Description"
           variant="outlined"
