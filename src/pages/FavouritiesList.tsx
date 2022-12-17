@@ -37,7 +37,7 @@ const FavouritiesList = () => {
 
   return (
     <div>
-      <div> FavouritiesList</div>
+      {/* <div> FavouritiesList</div> */}
       <div>
         {favouritiesBooks.map((book: book) => (
           <div key={book._id}>

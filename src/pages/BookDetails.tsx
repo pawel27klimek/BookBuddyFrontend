@@ -84,7 +84,9 @@ const BookDetails = () => {
         <div>Description:{book?.description}</div>
         <div>Language:{book?.language}</div>
         <div>Number of pages:{book?.nrOfPages}</div>
-
+        <div>Image:{book?.imgUrl}</div>
+        <div>Publisher:{book?.publisher}</div>
+        <div>Year of publication:{book?.yearOfPublication}</div>
         <div>User creator: {book?.creatorUserEmail}</div>
         {showDeleteButton && (
           <div>
